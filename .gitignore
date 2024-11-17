@@ -1,15 +1,3 @@
-# Unity Project
-UnityProject/Library/
-UnityProject/Logs/
-UnityProject/Temp/
-UnityProject/obj/
-UnityProject/UserSettings/
-UnityProject/Build/
-
-# ROS Workspace
-ROS/build/
-ROS/devel/
-
 # Common Ignore Patterns
 .DS_Store
 *.swp

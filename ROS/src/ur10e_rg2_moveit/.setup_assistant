@@ -1,11 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
-    package: ""
-    relative_path: /home/trung/Documents/Unity-Robotics-Hub/tutorials/pick_and_place/PickAndPlaceProject/Assets/URDF/ur10e_with_rg2.urdf
+    package: ur10e_rg2_urdf
+    relative_path: urdf/ur10e_with_rg2.urdf
     xacro_args: ""
   SRDF:
     relative_path: config/ur10e_robot_rg2.srdf
   CONFIG:
     author_name: Doan Minh Trung
     author_email: minhtrung2204.vn@gmail.com
-    generated_timestamp: 1730717262
+    generated_timestamp: 1731855261

@@ -22,7 +22,7 @@ add_message_files(
 )
 
 # Add service files
-add_service_files(DIRECTORY srv)
+# add_service_files(DIRECTORY srv)
 
 # Generate added messages and services
 generate_messages(

@@ -70,7 +70,7 @@
         <visual>
             <origin rpy="0 0 3.141592653589793" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/base.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/base.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -79,7 +79,7 @@
         <collision>
             <origin rpy="0 0 3.141592653589793" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/base.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/base.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -92,7 +92,7 @@
         <visual>
             <origin rpy="0 0 3.141592653589793" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/shoulder.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/shoulder.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -101,7 +101,7 @@
         <collision>
             <origin rpy="0 0 3.141592653589793" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/shoulder.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/shoulder.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -114,7 +114,7 @@
         <visual>
             <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.1762" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/upperarm.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/upperarm.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -123,7 +123,7 @@
         <collision>
             <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.1762" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/upperarm.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/upperarm.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -136,7 +136,7 @@
         <visual>
             <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.0393" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/forearm.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/forearm.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -145,7 +145,7 @@
         <collision>
             <origin rpy="1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0.0393" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/forearm.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/forearm.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -159,7 +159,7 @@
             <!-- TODO: Move this to a parameter -->
             <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.135" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/wrist1.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/wrist1.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -168,7 +168,7 @@
         <collision>
             <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.135" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/wrist1.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/wrist1.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -181,7 +181,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 -0.12" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/wrist2.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/wrist2.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -190,7 +190,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 -0.12" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/wrist2.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/wrist2.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -203,7 +203,7 @@
         <visual>
             <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.1168" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/visual/wrist3.dae" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/visual/wrist3.dae" />
             </geometry>
             <material name="LightGrey">
                 <color rgba="0.7 0.7 0.7 1.0" />
@@ -212,7 +212,7 @@
         <collision>
             <origin rpy="1.5707963267948966 0 0" xyz="0 0 -0.1168" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/ur10e/collision/wrist3.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/ur10e/collision/wrist3.stl" />
             </geometry>
         </collision>
         <inertial>
@@ -231,7 +231,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/base_link.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/base_link.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.8 0.8 0.8 1" />
@@ -240,7 +240,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/base_link.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/base_link.stl" />
             </geometry>
         </collision>
     </link>
@@ -253,7 +253,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/outer_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/outer_knuckle.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.8 0.8 0.8 1" />
@@ -262,7 +262,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/outer_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/outer_knuckle.stl" />
             </geometry>
         </collision>
     </link>
@@ -275,7 +275,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/inner_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/inner_knuckle.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.8 0.8 0.8 1" />
@@ -284,7 +284,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/inner_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/inner_knuckle.stl" />
             </geometry>
         </collision>
     </link>
@@ -297,7 +297,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/inner_finger.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/inner_finger.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.1 0.1 0.1 1" />
@@ -306,7 +306,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/inner_finger.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/inner_finger.stl" />
             </geometry>
         </collision>
     </link>
@@ -319,7 +319,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/outer_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/outer_knuckle.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.8 0.8 0.8 1" />
@@ -328,7 +328,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/outer_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/outer_knuckle.stl" />
             </geometry>
         </collision>
     </link>
@@ -341,7 +341,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/inner_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/inner_knuckle.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.8 0.8 0.8 1" />
@@ -350,7 +350,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/inner_knuckle.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/inner_knuckle.stl" />
             </geometry>
         </collision>
     </link>
@@ -363,7 +363,7 @@
         <visual>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/visual/inner_finger.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/visual/inner_finger.stl" />
             </geometry>
             <material name="">
                 <color rgba="0.1 0.1 0.1 1" />
@@ -372,7 +372,7 @@
         <collision>
             <origin rpy="0 0 0" xyz="0 0 0" />
             <geometry>
-                <mesh filename="package://ur_description/meshes/rg2/collision/inner_finger.stl" />
+                <mesh filename="package://ur10e_rg2_urdf/meshes/rg2/collision/inner_finger.stl" />
             </geometry>
         </collision>
     </link>
