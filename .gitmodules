@@ -1,0 +1,3 @@
+[submodule "ROS/src/stomp_ros"]
+	path = ROS/src/stomp_ros
+	url = https://github.com/ros-industrial/stomp_ros
