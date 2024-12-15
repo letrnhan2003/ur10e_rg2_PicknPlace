@@ -7,10 +7,9 @@ import rospy
 from ur10e_rg2_moveit.msg import UniversalRobotsJointsMsg
 
 def callback(data):
-    # rospy.loginfo(rospy.get_caller_id() + " I heard:\n%s", data)
     rospy.loginfo("Received joint positions: %s", data.joints)
-    rospy.loginfo("Received pick pose: %s", data.pick_pose)
-    rospy.loginfo("Received place pose: %s", data.place_pose)
+    rospy.loginfo("Received pick pose:\n%s", data.pick_pose)
+    rospy.loginfo("Received place pose:\n%s", data.place_pose)
 
 def listener():
     rospy.init_node('UR10e_Trajectory_Subscriber', anonymous=True)

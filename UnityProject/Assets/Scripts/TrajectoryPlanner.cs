@@ -1,8 +1,9 @@
+/*
 using System;
 using System.Collections;
 using System.Linq;
 using RosMessageTypes.Geometry;
-using RosMessageTypes.NiryoMoveit;
+using RosMessageTypes.Ur10eRg2Moveit;
 using Unity.Robotics.ROSTCPConnector;
 using Unity.Robotics.ROSTCPConnector.ROSGeometry;
 using UnityEngine;
@@ -16,12 +17,12 @@ public class TrajectoryPlanner : MonoBehaviour
 
     // Variables required for ROS communication
     [SerializeField]
-    string m_RosServiceName = "niryo_moveit";
+    string m_RosServiceName = "ur10e_rg2_moveit";
     public string RosServiceName { get => m_RosServiceName; set => m_RosServiceName = value; }
 
     [SerializeField]
-    GameObject m_NiryoOne;
-    public GameObject NiryoOne { get => m_NiryoOne; set => m_NiryoOne = value; }
+    GameObject m_UR10e;
+    public GameObject UR10e { get => m_UR10e; set => m_UR10e = value; }
     [SerializeField]
     GameObject m_Target;
     public GameObject Target { get => m_Target; set => m_Target = value; }
@@ -35,8 +36,9 @@ public class TrajectoryPlanner : MonoBehaviour
 
     // Articulation Bodies
     ArticulationBody[] m_JointArticulationBodies;
-    ArticulationBody m_LeftGripper;
-    ArticulationBody m_RightGripper;
+    // TODO: Handle gripper later
+    // ArticulationBody m_LeftGripper;
+    // ArticulationBody m_RightGripper;
 
     // ROS Connector
     ROSConnection m_Ros;
@@ -57,15 +59,16 @@ public class TrajectoryPlanner : MonoBehaviour
         for (var i = 0; i < k_NumRobotJoints; i++)
         {
             linkName += SourceDestinationPublisher.LinkNames[i];
-            m_JointArticulationBodies[i] = m_NiryoOne.transform.Find(linkName).GetComponent<ArticulationBody>();
+            m_JointArticulationBodies[i] = m_UR10e.transform.Find(linkName).GetComponent<ArticulationBody>();
         }
 
-        // Find left and right fingers
-        var rightGripper = linkName + "/tool_link/gripper_base/servo_head/control_rod_right/right_gripper";
-        var leftGripper = linkName + "/tool_link/gripper_base/servo_head/control_rod_left/left_gripper";
+        // TODO: Handle gripper later
+        // // Find left and right fingers
+        // var rightGripper = linkName + "/tool_link/gripper_base/servo_head/control_rod_right/right_gripper";
+        // var leftGripper = linkName + "/tool_link/gripper_base/servo_head/control_rod_left/left_gripper";
 
-        m_RightGripper = m_NiryoOne.transform.Find(rightGripper).GetComponent<ArticulationBody>();
-        m_LeftGripper = m_NiryoOne.transform.Find(leftGripper).GetComponent<ArticulationBody>();
+        // m_RightGripper = m_UR10e.transform.Find(rightGripper).GetComponent<ArticulationBody>();
+        // m_LeftGripper = m_UR10e.transform.Find(leftGripper).GetComponent<ArticulationBody>();
     }
 
     /// <summary>
@@ -73,14 +76,16 @@ public class TrajectoryPlanner : MonoBehaviour
     /// </summary>
     void CloseGripper()
     {
-        var leftDrive = m_LeftGripper.xDrive;
-        var rightDrive = m_RightGripper.xDrive;
+        // TODO: Handle gripper later
+        Debug.Log("Gripper Closed.");
+        // var leftDrive = m_LeftGripper.xDrive;
+        // var rightDrive = m_RightGripper.xDrive;
 
-        leftDrive.target = -0.01f;
-        rightDrive.target = 0.01f;
+        // leftDrive.target = -0.01f;
+        // rightDrive.target = 0.01f;
 
-        m_LeftGripper.xDrive = leftDrive;
-        m_RightGripper.xDrive = rightDrive;
+        // m_LeftGripper.xDrive = leftDrive;
+        // m_RightGripper.xDrive = rightDrive;
     }
 
     /// <summary>
@@ -88,23 +93,25 @@ public class TrajectoryPlanner : MonoBehaviour
     /// </summary>
     void OpenGripper()
     {
-        var leftDrive = m_LeftGripper.xDrive;
-        var rightDrive = m_RightGripper.xDrive;
+        // TODO: Handle gripper later
+        Debug.Log("Gripper Opened.");
+        // var leftDrive = m_LeftGripper.xDrive;
+        // var rightDrive = m_RightGripper.xDrive;
 
-        leftDrive.target = 0.01f;
-        rightDrive.target = -0.01f;
+        // leftDrive.target = 0.01f;
+        // rightDrive.target = -0.01f;
 
-        m_LeftGripper.xDrive = leftDrive;
-        m_RightGripper.xDrive = rightDrive;
+        // m_LeftGripper.xDrive = leftDrive;
+        // m_RightGripper.xDrive = rightDrive;
     }
 
     /// <summary>
     ///     Get the current values of the robot's joint angles.
     /// </summary>
-    /// <returns>NiryoMoveitJoints</returns>
-    NiryoMoveitJointsMsg CurrentJointConfig()
+    /// <returns>Ur10eMoveitJoints</returns>
+    Ur10eMoveitJointsMsg CurrentJointConfig()
     {
-        var joints = new NiryoMoveitJointsMsg();
+        var joints = new Ur10eMoveitJointsMsg();
 
         for (var i = 0; i < k_NumRobotJoints; i++)
         {
@@ -129,10 +136,10 @@ public class TrajectoryPlanner : MonoBehaviour
         request.pick_pose = new PoseMsg
         {
             position = (m_Target.transform.position + m_PickPoseOffset).To<FLU>(),
-
-            // The hardcoded x/z angles assure that the gripper is always positioned above the target cube before grasping.
             orientation = Quaternion.Euler(90, m_Target.transform.eulerAngles.y, 0).To<FLU>()
         };
+
+        Debug.Log($"Pick Pose: Position: {request.pick_pose.position.x}, {request.pick_pose.position.y}, {request.pick_pose.position.z} | Orientation: {request.pick_pose.orientation.x}, {request.pick_pose.orientation.y}, {request.pick_pose.orientation.z}, {request.pick_pose.orientation.w}");
 
         // Place Pose
         request.place_pose = new PoseMsg
@@ -140,6 +147,8 @@ public class TrajectoryPlanner : MonoBehaviour
             position = (m_TargetPlacement.transform.position + m_PickPoseOffset).To<FLU>(),
             orientation = m_PickOrientation.To<FLU>()
         };
+
+        Debug.Log($"Place Pose: Position: {request.place_pose.position.x}, {request.place_pose.position.y}, {request.place_pose.position.z} | Orientation: {request.place_pose.orientation.x}, {request.place_pose.orientation.y}, {request.place_pose.orientation.z}, {request.place_pose.orientation.w}");
 
         m_Ros.SendServiceMessage<MoverServiceResponse>(m_RosServiceName, request, TrajectoryResponse);
     }
@@ -166,7 +175,7 @@ public class TrajectoryPlanner : MonoBehaviour
     ///     Executing a single trajectory will iterate through every robot pose in the array while updating the
     ///     joint values on the robot.
     /// </summary>
-    /// <param name="response"> MoverServiceResponse received from niryo_moveit mover service running in ROS</param>
+    /// <param name="response"> MoverServiceResponse received from ur10e_rg2_moveit mover service running in ROS</param>
     /// <returns></returns>
     IEnumerator ExecuteTrajectories(MoverServiceResponse response)
     {
@@ -216,3 +225,5 @@ public class TrajectoryPlanner : MonoBehaviour
         Place
     }
 }
+
+*/
