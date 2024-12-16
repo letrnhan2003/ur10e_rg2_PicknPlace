@@ -1,4 +1,3 @@
-/*
 using System;
 using System.Collections;
 using System.Linq;
@@ -225,5 +224,3 @@ public class TrajectoryPlanner : MonoBehaviour
         Place
     }
 }
-
-*/

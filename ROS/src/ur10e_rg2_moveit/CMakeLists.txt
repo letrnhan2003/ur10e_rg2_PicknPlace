@@ -15,16 +15,10 @@ find_package(catkin REQUIRED COMPONENTS
 )
 roslaunch_add_file_check(launch)
 
-# Add custom message files
-add_message_files(
-  FILES
-  UniversalRobotsJointsMsg.msg
-)
+add_message_files(DIRECTORY msg)
 
-# Add service files
-# add_service_files(DIRECTORY srv)
+add_service_files(DIRECTORY srv)
 
-# Generate added messages and services
 generate_messages(
   DEPENDENCIES
   geometry_msgs
@@ -36,6 +30,7 @@ generate_messages(
 catkin_package()
 
 catkin_install_python(PROGRAMS
+  scripts/mover.py
   scripts/trajectory_subscriber.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
