@@ -48,7 +48,7 @@ public class TrajectoryPlanner : MonoBehaviour
 
 
     // Assures that the gripper is always positioned above the m_Target cube before grasping.
-    readonly Quaternion m_PickOrientation = Quaternion.Euler(180, 180, 0);
+    readonly Quaternion m_PickOrientation = Quaternion.Euler(180, 0, 0);
     // TODO: Adjust for better position offset
     readonly Vector3 m_PickPoseOffset = Vector3.up * 0.27f;
 
