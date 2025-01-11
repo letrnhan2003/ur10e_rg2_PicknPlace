@@ -1,7 +1,6 @@
 # Pick and Place Tutorial
 
 **Table of Contents**
-- [Pick and Place Tutorial](#pick-and-place-tutorial)
 - [Overview](#overview)
 - [ROS Download](#ros-download)
 - [Setting up Unity Scene](#setting-up-unity-scene)
