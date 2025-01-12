@@ -33,7 +33,10 @@ else:
     Given the start angles of the robot, plan a trajectory that ends at the destination pose.
     Retry until a valid trajectory is found or maximum attempts are reached.
 """
-def plan_trajectory(move_group, destination_pose, start_joint_angles, max_attempts=5): 
+def plan_trajectory(move_group, destination_pose, start_joint_angles, max_attempts=5):
+    move_group.set_max_velocity_scaling_factor(0.001)
+    move_group.set_max_acceleration_scaling_factor(0.001)
+
     for attempt in range(max_attempts):
         try:
             current_joint_state = JointState()
